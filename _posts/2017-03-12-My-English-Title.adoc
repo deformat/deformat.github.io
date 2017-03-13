@@ -1,10 +1,25 @@
 = Became more accessible
-:published_at: 2017-03-12
-:hp-tags: Blog, Closed_Captioning,
-:hp-alt-title: My English Title
 
-Starting weekly updates on my being. First order of business: _accessibility_!
+:published_at: 2017-03-13
+:hp-tags: Blog, Closed_Captioning, Hearing
+:hp-image: https://i.vimeocdn.com/video/567558498.png
 
-My first comedy _Will Do_ finally includes English closed captions. I continuously complain about online videos not being accessible to the deaf and hard-of-hearing; it's about time I practice what I preach.
+Starting weekly updates on my being. First order of business:
+
+== _Accessibility!_
+
+My first comedy _Will Do_ finally includes English closed captions. I continuously complain about online videos not being accessible to the deaf and hard-of-hearing; it's about time I started practicing what I preach.
 
 video::162624950[vimeo]
+
+Captioning with Adobe Premiere 2017 is much smoother than it used to be. It's still buggy (center-align needs a lot of manual adjusting), but sliding and editing captions with the mouse rather than setting specific times for every in-point and out-point (the horror...the boredom...the wrist pain) is just what I've needed all these years.
+
+== _A new radio show!_
+
+This is a week old, but I'm still proud of my latest After Effects experiment: _Matt Pala Radio Simulcast_.
+
+video::206998812[vimeo]
+
+It's my first video in a long time that's 100% original content. Even the drums I sampled for the theme song are Creative Commons Attribution (commercial use allowed so long as I cite (TicTacShutUp at Freesound.org)). I could profit from this if I wanted to. That's such a powerful feeling.
+
+Too bad the show's already cancelled.
