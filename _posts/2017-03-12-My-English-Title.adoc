@@ -1,4 +1,4 @@
-= Became more accessible
+= Weekly Roundup: Became more accessible
 
 :published_at: 2017-03-13
 :hp-tags: Blog, Closed_Captioning, Hearing
