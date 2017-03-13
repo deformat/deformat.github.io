@@ -2,9 +2,38 @@
   "meta": {
     "username": "deformat",
     "repositoryName": "deformat.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": ""
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "https://deformat.github.io",
+    "hubpress": "https://deformat.github.io",
+    "theme": "//deformat.github.io/themes/casper",
+    "images": "https://deformat.github.io/images"
+  },
+  "site": {
+    "title": "Matt's not done",
+    "description": "He isn't",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "",
+    "github": "deformat",
+    "twitter": "",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   }
 }
