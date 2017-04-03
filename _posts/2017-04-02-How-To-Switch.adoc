@@ -1,0 +1,363 @@
+= How to convert a nested if-else statement into a switch statement
+
+:published_at: 2017-04-02
+:hp-tags: Blog, Coding
+:hp-image: https://img.clipartfest.com/ee0d268f320c266854ba35b886c10ff7_coding-skills-coding_400-284.jpeg
+:hp-alt-title: How To Switch
+
+So I was tutoring someone on how they could apply nested if-else statements for the rules of leap years. For instance...
+
+----
+int year;
+cin >> year;
+
+if(year % 100 == 0)
+{
+    if(year % 400 == 0)
+        cout << "29 days\n";
+    else
+        cout << "28 days\n";
+}
+else
+{
+    if(year % 4 == 0)
+        cout << "29 days\n";
+    else
+        cout << " 28 days\n";
+}
+----
+
+As my "pupil" was figuring out the code, I wondered out loud if you could turn this into a switch statement. A colleague sitting behind me said no because switch statements only consider the value of a variable, not whether it's divisible by anything. Suddenly a vision came and I started jotting this down:
+
+----
+int year, remainder;
+cin >> year;
+remainder = year % 400;
+		
+switch (remainder)
+{
+	case 0: cout << "29 days" << endl;
+		break;
+	case 4: cout << "29 days" << endl;
+		break;
+	case 100: cout << "28 days" << endl;
+		break;
+	case 200: cout << "28 days" << endl;
+		break;
+	case 300: cout << "28 days" << endl;
+		break;
+	default: cout << "28 days" << endl;
+}
+----
+
+"Yes!" I declared. "This works! It says 2000 is a leap year, but 1900 and 2100 are not! And it works for everything inbetween!
+
+2000 = LEAP YEAR +
+2001 = NOT LEAP YEAR +
+2002 = NOT LEAP YEAR +
+2003 = NOT LEAP YEAR +
+2004 = LEAP YEAR +
+2005 = NOT LEAP YEAR +
+2006 = NOT LEAP YEAR +
+2007 = NOT LEAP YEAR +
+2008 = ...Not leap year?
+
+My colleague laughed. "You need to set a case for every multiple of four within 400!" he teased. Well, alright! That's...little less than a hundred cases? I can get that done!
+
+About 20 cases in, my laziness realized "Wait, I can just make a program to write the switch statement for me!" So...
+
+----
+#include <iostream>
+using namespace std;
+int main()
+{
+	int remainder = 0;
+
+	cout << "\t\tswitch (remainder)\n\t\t{\n\t\t\tcase " 
+		<< remainder << ": cout << \"29 days\" << endl;\n\t\t\t\tbreak;\n";
+
+	remainder += 4;
+	
+	while (remainder < 400)
+	{
+		if (remainder % 100 != 0)
+			cout << "\t\t\tcase " << remainder << ": cout << \"29 days\" << endl;\n\t\t\t\tbreak;\n";
+		remainder += 4;
+	}
+
+	cout << "\t\t\tdefault: cout << \"28 days\" << endl;\n\t\t}";
+}
+
+----
+
+Then I could send the output to a text file and paste the result into my code!
+
+----
+#include <iostream>
+using namespace std;
+int main()
+{
+	int year, remainder;
+	cout << "Enter year: ";
+	cin >> year;
+	while (year != -1)
+	{
+		remainder = year % 400;
+		
+		switch (remainder)
+		{
+			case 0: cout << "29 days" << endl;
+				break;
+			case 4: cout << "29 days" << endl;
+				break;
+			case 8: cout << "29 days" << endl;
+				break;
+			case 12: cout << "29 days" << endl;
+				break;
+			case 16: cout << "29 days" << endl;
+				break;
+			case 20: cout << "29 days" << endl;
+				break;
+			case 24: cout << "29 days" << endl;
+				break;
+			case 28: cout << "29 days" << endl;
+				break;
+			case 32: cout << "29 days" << endl;
+				break;
+			case 36: cout << "29 days" << endl;
+				break;
+			case 40: cout << "29 days" << endl;
+				break;
+			case 44: cout << "29 days" << endl;
+				break;
+			case 48: cout << "29 days" << endl;
+				break;
+			case 52: cout << "29 days" << endl;
+				break;
+			case 56: cout << "29 days" << endl;
+				break;
+			case 60: cout << "29 days" << endl;
+				break;
+			case 64: cout << "29 days" << endl;
+				break;
+			case 68: cout << "29 days" << endl;
+				break;
+			case 72: cout << "29 days" << endl;
+				break;
+			case 76: cout << "29 days" << endl;
+				break;
+			case 80: cout << "29 days" << endl;
+				break;
+			case 84: cout << "29 days" << endl;
+				break;
+			case 88: cout << "29 days" << endl;
+				break;
+			case 92: cout << "29 days" << endl;
+				break;
+			case 96: cout << "29 days" << endl;
+				break;
+			case 104: cout << "29 days" << endl;
+				break;
+			case 108: cout << "29 days" << endl;
+				break;
+			case 112: cout << "29 days" << endl;
+				break;
+			case 116: cout << "29 days" << endl;
+				break;
+			case 120: cout << "29 days" << endl;
+				break;
+			case 124: cout << "29 days" << endl;
+				break;
+			case 128: cout << "29 days" << endl;
+				break;
+			case 132: cout << "29 days" << endl;
+				break;
+			case 136: cout << "29 days" << endl;
+				break;
+			case 140: cout << "29 days" << endl;
+				break;
+			case 144: cout << "29 days" << endl;
+				break;
+			case 148: cout << "29 days" << endl;
+				break;
+			case 152: cout << "29 days" << endl;
+				break;
+			case 156: cout << "29 days" << endl;
+				break;
+			case 160: cout << "29 days" << endl;
+				break;
+			case 164: cout << "29 days" << endl;
+				break;
+			case 168: cout << "29 days" << endl;
+				break;
+			case 172: cout << "29 days" << endl;
+				break;
+			case 176: cout << "29 days" << endl;
+				break;
+			case 180: cout << "29 days" << endl;
+				break;
+			case 184: cout << "29 days" << endl;
+				break;
+			case 188: cout << "29 days" << endl;
+				break;
+			case 192: cout << "29 days" << endl;
+				break;
+			case 196: cout << "29 days" << endl;
+				break;
+			case 204: cout << "29 days" << endl;
+				break;
+			case 208: cout << "29 days" << endl;
+				break;
+			case 212: cout << "29 days" << endl;
+				break;
+			case 216: cout << "29 days" << endl;
+				break;
+			case 220: cout << "29 days" << endl;
+				break;
+			case 224: cout << "29 days" << endl;
+				break;
+			case 228: cout << "29 days" << endl;
+				break;
+			case 232: cout << "29 days" << endl;
+				break;
+			case 236: cout << "29 days" << endl;
+				break;
+			case 240: cout << "29 days" << endl;
+				break;
+			case 244: cout << "29 days" << endl;
+				break;
+			case 248: cout << "29 days" << endl;
+				break;
+			case 252: cout << "29 days" << endl;
+				break;
+			case 256: cout << "29 days" << endl;
+				break;
+			case 260: cout << "29 days" << endl;
+				break;
+			case 264: cout << "29 days" << endl;
+				break;
+			case 268: cout << "29 days" << endl;
+				break;
+			case 272: cout << "29 days" << endl;
+				break;
+			case 276: cout << "29 days" << endl;
+				break;
+			case 280: cout << "29 days" << endl;
+				break;
+			case 284: cout << "29 days" << endl;
+				break;
+			case 288: cout << "29 days" << endl;
+				break;
+			case 292: cout << "29 days" << endl;
+				break;
+			case 296: cout << "29 days" << endl;
+				break;
+			case 304: cout << "29 days" << endl;
+				break;
+			case 308: cout << "29 days" << endl;
+				break;
+			case 312: cout << "29 days" << endl;
+				break;
+			case 316: cout << "29 days" << endl;
+				break;
+			case 320: cout << "29 days" << endl;
+				break;
+			case 324: cout << "29 days" << endl;
+				break;
+			case 328: cout << "29 days" << endl;
+				break;
+			case 332: cout << "29 days" << endl;
+				break;
+			case 336: cout << "29 days" << endl;
+				break;
+			case 340: cout << "29 days" << endl;
+				break;
+			case 344: cout << "29 days" << endl;
+				break;
+			case 348: cout << "29 days" << endl;
+				break;
+			case 352: cout << "29 days" << endl;
+				break;
+			case 356: cout << "29 days" << endl;
+				break;
+			case 360: cout << "29 days" << endl;
+				break;
+			case 364: cout << "29 days" << endl;
+				break;
+			case 368: cout << "29 days" << endl;
+				break;
+			case 372: cout << "29 days" << endl;
+				break;
+			case 376: cout << "29 days" << endl;
+				break;
+			case 380: cout << "29 days" << endl;
+				break;
+			case 384: cout << "29 days" << endl;
+				break;
+			case 388: cout << "29 days" << endl;
+				break;
+			case 392: cout << "29 days" << endl;
+				break;
+			case 396: cout << "29 days" << endl;
+				break;
+			default: cout << "28 days" << endl;
+		}
+		cout << "Enter year (-1 to quit): ";
+		cin >> year;
+	}
+ 
+	cout << "Coo'" << endl;
+
+	return 0;
+}
+
+----
+
+== But...why do any of this?
+
+Okay, so using large switch statements is rarely useful when an if-else statement could work it much faster, but hey, at least we CAN do it! Shows the power of switch statements, no?
+
+== It's 200 lines of code.
+
+It's unwieldy, yes. But! So long as I can write a program to do most of the busywork, it's not so bad!
+
+== But you don't even have to check all these cases!
+
+Huh?
+
+== You could apply the same logic you used at the beginning, but instead of a nested if-else statement, use a nested switch statement.
+
+----
+int remain4 = year % 4;
+int remain100 = year % 100;
+int remain400 = year % 400;
+        
+// Check if divisible by 100
+switch (remain100)
+{
+    //Check if divisible by 400
+    case 0:
+        switch (remain400)
+        {
+            case 0: cout << "29 days\n";
+                    break;
+            default: cout << "28 days\n";
+        }
+        break;
+    //Check if divisible by 4
+    default:
+        switch(remain4)
+        {
+            case 0: cout << "29 days\n";
+                    break;
+            default: cout << "28 days\n";
+        }
+}
+----
+
+== It works just the same without having to write code just to write the code!
+
+...Oh.
+
+== You said you were _tutoring_ someone?
+
